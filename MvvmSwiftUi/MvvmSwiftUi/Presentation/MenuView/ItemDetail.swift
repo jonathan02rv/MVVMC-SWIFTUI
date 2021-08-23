@@ -11,7 +11,7 @@ struct ItemDetail: View {
     
     @EnvironmentObject var order: Order
     
-    let item: MenuItem
+    let item: MenuItemModel
     
     var body: some View {
         VStack {
@@ -42,7 +42,7 @@ struct ItemDetal_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             NavigationView {
-                ItemDetail(item: MenuItem.example)
+                ItemDetail(item: MenuItemModel.example)
                     .environmentObject(Order())
             }
         }

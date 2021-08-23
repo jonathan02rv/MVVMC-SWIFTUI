@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MenuView: View {
-    let sections = Bundle.main.decode([MenuSection].self, from: "menu.json")
+    let sections = Bundle.main.decode([MenuSectionModel].self, from: "menu.json")
     var body: some View {
         NavigationView{
             List{

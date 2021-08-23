@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ItemRow: View {
         
-    let item: MenuItem
+    let item: MenuItemModel
     
     var body: some View {
         HStack{
@@ -28,6 +28,6 @@ struct ItemRow: View {
 
 struct ItemRow_Previews: PreviewProvider {
     static var previews: some View {
-        ItemRow(item: MenuItem.example)
+        ItemRow(item: MenuItemModel.example)
     }
 }

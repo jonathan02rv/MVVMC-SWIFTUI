@@ -10,6 +10,8 @@
 		3FF8561426D4249400A6DAA0 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF8560A26D4249300A6DAA0 /* Domain.framework */; };
 		3FF8561926D4249400A6DAA0 /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8561826D4249400A6DAA0 /* DomainTests.swift */; };
 		3FF8561B26D4249400A6DAA0 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FF8560D26D4249300A6DAA0 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3FF8569726D447D100A6DAA0 /* MenuSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8569626D447D100A6DAA0 /* MenuSectionModel.swift */; };
+		3FF8569D26D4480000A6DAA0 /* MenuItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8569C26D4480000A6DAA0 /* MenuItemModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		3FF8561326D4249400A6DAA0 /* DomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF8561826D4249400A6DAA0 /* DomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTests.swift; sourceTree = "<group>"; };
 		3FF8561A26D4249400A6DAA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FF8569626D447D100A6DAA0 /* MenuSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSectionModel.swift; sourceTree = "<group>"; };
+		3FF8569C26D4480000A6DAA0 /* MenuItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 		3FF8560C26D4249300A6DAA0 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				3FF8569426D4474D00A6DAA0 /* Model */,
+				3FF8578926D469DA00A6DAA0 /* Repository */,
 				3FF8560D26D4249300A6DAA0 /* Domain.h */,
 				3FF8560E26D4249300A6DAA0 /* Info.plist */,
 			);
@@ -84,6 +90,30 @@
 				3FF8561A26D4249400A6DAA0 /* Info.plist */,
 			);
 			path = DomainTests;
+			sourceTree = "<group>";
+		};
+		3FF8569426D4474D00A6DAA0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3FF8569526D447B500A6DAA0 /* MenuModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3FF8569526D447B500A6DAA0 /* MenuModel */ = {
+			isa = PBXGroup;
+			children = (
+				3FF8569626D447D100A6DAA0 /* MenuSectionModel.swift */,
+				3FF8569C26D4480000A6DAA0 /* MenuItemModel.swift */,
+			);
+			path = MenuModel;
+			sourceTree = "<group>";
+		};
+		3FF8578926D469DA00A6DAA0 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +177,7 @@
 				TargetAttributes = {
 					3FF8560926D4249300A6DAA0 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					3FF8561226D4249400A6DAA0 = {
 						CreatedOnToolsVersion = 12.4;
@@ -194,6 +225,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF8569726D447D100A6DAA0 /* MenuSectionModel.swift in Sources */,
+				3FF8569D26D4480000A6DAA0 /* MenuItemModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +301,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -326,7 +359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -341,6 +374,7 @@
 		3FF8561F26D4249400A6DAA0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9M6XRM7NTX;
@@ -349,6 +383,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Domain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -357,14 +392,17 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jhonatahan.ios.sdk.Domain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		3FF8562026D4249400A6DAA0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9M6XRM7NTX;
@@ -373,6 +411,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Domain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,14 +420,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jhonatahan.ios.sdk.Domain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		3FF8562226D4249400A6DAA0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9M6XRM7NTX;
 				INFOPLIST_FILE = DomainTests/Info.plist;
@@ -407,6 +448,7 @@
 		3FF8562326D4249400A6DAA0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9M6XRM7NTX;
 				INFOPLIST_FILE = DomainTests/Info.plist;

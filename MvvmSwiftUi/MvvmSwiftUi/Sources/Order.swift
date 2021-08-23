@@ -9,7 +9,7 @@
 import SwiftUI
 
 class Order: ObservableObject {
-    @Published var items = [MenuItem]()
+    @Published var items = [MenuItemModel]()
 
     var total: Int {
         if items.count > 0 {
@@ -19,11 +19,11 @@ class Order: ObservableObject {
         }
     }
 
-    func add(item: MenuItem) {
+    func add(item: MenuItemModel) {
         items.append(item)
     }
 
-    func remove(item: MenuItem) {
+    func remove(item: MenuItemModel) {
         if let index = items.firstIndex(of: item) {
             items.remove(at: index)
         }
