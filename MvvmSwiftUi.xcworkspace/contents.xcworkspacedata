@@ -4,4 +4,10 @@
    <FileRef
       location = "group:MvvmSwiftUi/MvvmSwiftUi.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Domain/Domain.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Data/Data.xcodeproj">
+   </FileRef>
 </Workspace>
