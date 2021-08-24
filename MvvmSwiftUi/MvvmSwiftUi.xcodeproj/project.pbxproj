@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F545E6226D5A15A0027837D /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF857BA26D4810900A6DAA0 /* Data.framework */; };
+		3F545E6326D5A15A0027837D /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF857BA26D4810900A6DAA0 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3F545E6526D5A15C0027837D /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF857B426D4810500A6DAA0 /* Domain.framework */; };
+		3F545E6626D5A15C0027837D /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF857B426D4810500A6DAA0 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3FD258F826C2D2D900D96508 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD258F726C2D2D900D96508 /* AppDelegate.swift */; };
 		3FD258FA26C2D2D900D96508 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD258F926C2D2D900D96508 /* SceneDelegate.swift */; };
 		3FD258FC26C2D2D900D96508 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD258FB26C2D2D900D96508 /* MenuView.swift */; };
@@ -23,8 +27,6 @@
 		3FD2597626CC168100D96508 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2597526CC168100D96508 /* MainView.swift */; };
 		3FD2597E26CC21F500D96508 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD2597D26CC21F500D96508 /* CheckoutView.swift */; };
 		3FF857AC26D480BC00A6DAA0 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF857AB26D480BC00A6DAA0 /* MenuViewModel.swift */; };
-		3FF857B526D4810500A6DAA0 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF857B426D4810500A6DAA0 /* Domain.framework */; };
-		3FF857BB26D4810900A6DAA0 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF857BA26D4810900A6DAA0 /* Data.framework */; };
 		3FF857DF26D4BF5D00A6DAA0 /* MockMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF857DE26D4BF5D00A6DAA0 /* MockMenuViewModel.swift */; };
 		3FF8580126D4C1A000A6DAA0 /* MenuCordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8580026D4C1A000A6DAA0 /* MenuCordinator.swift */; };
 		3FF8580F26D522AB00A6DAA0 /* ItemDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8580E26D522AB00A6DAA0 /* ItemDetailViewModel.swift */; };
@@ -48,6 +50,21 @@
 			remoteInfo = MvvmSwiftUi;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3F545E6426D5A15B0027837D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3F545E6626D5A15C0027837D /* Domain.framework in Embed Frameworks */,
+				3F545E6326D5A15A0027837D /* Data.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3FD258F426C2D2D900D96508 /* MvvmSwiftUi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MvvmSwiftUi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,8 +103,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FF857BB26D4810900A6DAA0 /* Data.framework in Frameworks */,
-				3FF857B526D4810500A6DAA0 /* Domain.framework in Frameworks */,
+				3F545E6526D5A15C0027837D /* Domain.framework in Frameworks */,
+				3F545E6226D5A15A0027837D /* Data.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +330,7 @@
 				3FD258F026C2D2D900D96508 /* Sources */,
 				3FD258F126C2D2D900D96508 /* Frameworks */,
 				3FD258F226C2D2D900D96508 /* Resources */,
+				3F545E6426D5A15B0027837D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
