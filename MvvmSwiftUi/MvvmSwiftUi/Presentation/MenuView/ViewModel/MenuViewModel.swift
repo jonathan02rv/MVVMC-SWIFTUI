@@ -12,11 +12,10 @@ protocol MenuViewModelProtocol:ObservableObject{
     func callServiceMenuSections()
     func getAllSections()->[MenuSectionModel]
     func getItemData(sectionId:String, idItem:String)->MenuItemModel
-    //func addOrder(sectionId:String, idItem:String)
 }
 
 class MenuViewModel: MenuViewModelProtocol{
-    //@EnvironmentObject var order: Order
+    
     @Published var menuSections = [MenuSectionModel]()
     
     var userCaseMenu: MenuViewUseCaseProtocol
@@ -24,13 +23,7 @@ class MenuViewModel: MenuViewModelProtocol{
     init(userCaseMenu: MenuViewUseCaseProtocol) {
         self.userCaseMenu = userCaseMenu
     }
-    /*
-    func addOrder(sectionId:String, idItem:String){
-        let item = (self.menuSections.first{$0.id == sectionId})?.items.first{$0.id == idItem}
-        guard let dataItem = item else{return}
-        self.order.add(item: dataItem)
-    }*/
-    
+
     func getAllSections()->[MenuSectionModel]{
         return menuSections
     }

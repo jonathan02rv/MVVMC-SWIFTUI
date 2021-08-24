@@ -14,7 +14,7 @@ struct OrderView: View {
         NavigationView {
             List {
                 Section(header: Text("Order List")) {
-                    ForEach(order.items) { item in
+                    ForEach(order.itemsOrder) { item in
                         HStack {
                             Text(item.name)
                             Spacer()
@@ -32,12 +32,12 @@ struct OrderView: View {
                         Text("Place Order")
                             .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                     }
-                }.disabled(self.order.items.isEmpty)
+                }.disabled(self.order.itemsOrder.isEmpty)
             }
             .navigationBarTitle("Order", displayMode: .large)
             .navigationBarItems(trailing:
                                     EditButton()
-                                    .disabled(self.order.items.isEmpty))
+                                    .disabled(self.order.itemsOrder.isEmpty))
             .listStyle(GroupedListStyle())
         }
         .onAppear {
@@ -49,13 +49,8 @@ struct OrderView: View {
     }
     
     func deleteItems(at offsets: IndexSet) {
-        order.items.remove(atOffsets: offsets)
+        order.itemsOrder.remove(atOffsets: offsets)
     }
-    
-    /*
-    func moveItems(from fromOffsets: IndexSet, to toOffset: Int) {
-        order.items.move(fromOffsets: fromOffsets, toOffset: toOffset)
-    }*/
 }
 
 struct OrderView_Previews: PreviewProvider {

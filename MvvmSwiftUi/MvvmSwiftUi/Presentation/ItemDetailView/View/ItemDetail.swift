@@ -11,9 +11,6 @@ import Domain
 struct ItemDetail<ViewModel>: View where ViewModel: ItemDetailViewModelProtocol{
     
     @EnvironmentObject var order: Order
-        //var mainImage: String
-    //var photoCredit: String
-    //var description: String
     @ObservedObject var viewModel: ViewModel
     
     var body: some View {
@@ -33,7 +30,7 @@ struct ItemDetail<ViewModel>: View where ViewModel: ItemDetailViewModelProtocol{
             
             Text(item.description).padding().minimumScaleFactor(0.5)
             Button("Order This") {
-                //viewModel.addOrder(sectionId: sectionId, idItem: idItem)
+                //viewModel.addOrder(item: item)
                 order.add(item: item)
             }.font(.headline)
         }

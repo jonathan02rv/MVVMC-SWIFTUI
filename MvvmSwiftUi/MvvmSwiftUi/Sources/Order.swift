@@ -9,24 +9,29 @@
 import SwiftUI
 import Domain
 
-class Order: ObservableObject {
-    @Published var items = [MenuItemModel]()
+protocol OrderProtocol:class {
+    func add(item: MenuItemModel)
+    func remove(item: MenuItemModel)
+}
+
+class Order: ObservableObject, OrderProtocol {
+    @Published var itemsOrder = [MenuItemModel]()
 
     var total: Int {
-        if items.count > 0 {
-            return items.reduce(0) { $0 + $1.price }
+        if itemsOrder.count > 0 {
+            return itemsOrder.reduce(0) { $0 + $1.price }
         } else {
             return 0
         }
     }
 
     func add(item: MenuItemModel) {
-        items.append(item)
+        itemsOrder.append(item)
     }
 
     func remove(item: MenuItemModel) {
-        if let index = items.firstIndex(of: item) {
-            items.remove(at: index)
+        if let index = itemsOrder.firstIndex(of: item) {
+            itemsOrder.remove(at: index)
         }
     }
 }
