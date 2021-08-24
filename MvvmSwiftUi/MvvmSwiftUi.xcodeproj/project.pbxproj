@@ -199,11 +199,27 @@
 		3FD2598526CC693E00D96508 /* MenuView */ = {
 			isa = PBXGroup;
 			children = (
+				3FF857AA26D4802200A6DAA0 /* ViewModel */,
+				3FF857A926D4801300A6DAA0 /* View */,
+			);
+			path = MenuView;
+			sourceTree = "<group>";
+		};
+		3FF857A926D4801300A6DAA0 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				3FD258FB26C2D2D900D96508 /* MenuView.swift */,
 				3FD2593226C334CC00D96508 /* ItemRow.swift */,
 				3FD2593726C5D07D00D96508 /* ItemDetail.swift */,
 			);
-			path = MenuView;
+			path = View;
+			sourceTree = "<group>";
+		};
+		3FF857AA26D4802200A6DAA0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

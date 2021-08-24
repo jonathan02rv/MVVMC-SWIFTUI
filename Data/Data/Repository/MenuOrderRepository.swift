@@ -8,7 +8,8 @@
 import Foundation
 import Domain
 
-struct MenuOrderRepository{
+struct MenuOrderRepository: MenuOrderRepositoryProtocol{
+    
     private let networkDataSource: DataSourceNetworkProtocol
     private let localDataSource: DataSourceLocalProtocol
     
@@ -17,14 +18,14 @@ struct MenuOrderRepository{
         self.localDataSource = DataSourceLocal()
     }
     
-    func getMenuSectionsService(_ completion:@escaping (Swift.Result<MenuSectionModel,ErrorService>)->Void){
+    func getMenuSectionsService(_ completion:@escaping (Swift.Result<MenuSectionModel,ErrorModel>)->Void){
         let request = RequestOBjectMenuSection()
         networkDataSource.getMenuSectionsService(request: request) { (result) in
             switch result{
             case .success(let data):
                 completion(.success(MenuSectionEntity.maper(data: data)))
             case .failure(let error):
-                completion(.failure(error))
+                completion(.failure(ErrorEntity.maper(errorData: error)))
             }
         }
     }

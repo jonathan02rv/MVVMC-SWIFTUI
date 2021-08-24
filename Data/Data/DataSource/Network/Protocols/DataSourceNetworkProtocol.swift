@@ -9,5 +9,5 @@ import Foundation
 
 
 protocol DataSourceNetworkProtocol{
-    func getMenuSectionsService(request: RequestObject, _ completion:@escaping (Swift.Result<MenuSectionEntity,ErrorService>)->Void)
+    func getMenuSectionsService(request: RequestObject, _ completion:@escaping (Swift.Result<MenuSectionEntity,ErrorEntity>)->Void)
 }

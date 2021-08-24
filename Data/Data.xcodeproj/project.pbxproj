@@ -24,6 +24,7 @@
 		3FF8577626D466C400A6DAA0 /* MenuOrderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8577526D466C400A6DAA0 /* MenuOrderRepository.swift */; };
 		3FF8578026D4684100A6DAA0 /* DataSourceLocalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8577F26D4684100A6DAA0 /* DataSourceLocalProtocol.swift */; };
 		3FF8578626D4686A00A6DAA0 /* DataSourceLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8578526D4686A00A6DAA0 /* DataSourceLocal.swift */; };
+		3FF8579926D4732F00A6DAA0 /* BaseResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8579826D4732F00A6DAA0 /* BaseResponseEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		3FF8577526D466C400A6DAA0 /* MenuOrderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOrderRepository.swift; sourceTree = "<group>"; };
 		3FF8577F26D4684100A6DAA0 /* DataSourceLocalProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceLocalProtocol.swift; sourceTree = "<group>"; };
 		3FF8578526D4686A00A6DAA0 /* DataSourceLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceLocal.swift; sourceTree = "<group>"; };
+		3FF8579826D4732F00A6DAA0 /* BaseResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				3FF8570F26D4584B00A6DAA0 /* Error */,
+				3FF8579826D4732F00A6DAA0 /* BaseResponseEntity.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				3FF8571F26D4584C00A6DAA0 /* MenuSectionRequest.swift in Sources */,
 				3FF8578026D4684100A6DAA0 /* DataSourceLocalProtocol.swift in Sources */,
 				3FF8571C26D4584C00A6DAA0 /* ErrorHandler.swift in Sources */,
+				3FF8579926D4732F00A6DAA0 /* BaseResponseEntity.swift in Sources */,
 				3FF8572026D4584C00A6DAA0 /* RequestProtocol.swift in Sources */,
 				3FF8571D26D4584C00A6DAA0 /* DataSourceNetwork.swift in Sources */,
 				3FF8572126D4584C00A6DAA0 /* DataSourceNetworkProtocol.swift in Sources */,
