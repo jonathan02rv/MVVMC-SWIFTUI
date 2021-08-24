@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
+import Domain
+import Data
 
 struct MainView: View {
+
+    let cordinator: MainCordinatorProtocol
+    
     @ViewBuilder var body: some View {
         TabView {
-            MenuView()
+            cordinator.getMenuView()
                 .tabItem {
                     Image(systemName: "list.dash")
                     Text("Menu")
@@ -26,7 +31,7 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(cordinator: MainCordinator())
             .environmentObject(Order())
     }
 }

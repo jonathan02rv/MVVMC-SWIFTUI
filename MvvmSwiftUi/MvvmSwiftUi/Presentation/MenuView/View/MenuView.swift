@@ -7,21 +7,32 @@
 
 import SwiftUI
 
-struct MenuView: View {
-    let sections = Bundle.main.decode([MenuSectionModel].self, from: "menu.json")
+struct MenuView<ViewModel>: View where ViewModel: MenuViewModelProtocol{
+    
+    @ObservedObject var viewModel: ViewModel
+    let cordinator: MenuViewCordinatorProtocol
+    
+    init(viewModel: ViewModel, cordinator: MenuViewCordinatorProtocol) {
+        self.viewModel = viewModel
+        self.cordinator = cordinator
+        self.viewModel.callServiceMenuSections()
+    }
+    
     var body: some View {
         NavigationView{
             List{
-                ForEach(sections){ section in
+                ForEach(viewModel.getAllSections()){ section in
                     Section(header: Text(section.name)) {
                         ForEach(section.items){ item in
-                            NavigationLink(destination: ItemDetail(item: item)){
-                                ItemRow(item:item)
+                            NavigationLink(
+                                destination:
+                                    cordinator.routeToDetailItem(itemMenu: item)
+                                    ){
+                                ItemRow(viewModel: viewModel, idItem: item.id, sectionId: section.id)
                             }
                         }
                     }
                 }
-                
             }
             .listStyle(GroupedListStyle())
             .navigationBarTitle("Menu", displayMode: .automatic)
@@ -29,12 +40,11 @@ struct MenuView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView()
+        MenuView(viewModel: MockMenuVieModel(), cordinator: MenuViewCordinator())
     }
 }
-
 
 
 

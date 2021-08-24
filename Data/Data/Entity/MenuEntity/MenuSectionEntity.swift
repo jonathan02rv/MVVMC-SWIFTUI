@@ -15,7 +15,9 @@ struct MenuSectionEntity: Codable{
 }
 
 extension MenuSectionEntity{
-    static func maper(data: MenuSectionEntity)-> MenuSectionModel{
-        return MenuSectionModel(id: data.id, name: data.name, items: MenuItemEntity.mapperArray(data: data.items))
+    static func maperArray(data: [MenuSectionEntity])-> [MenuSectionModel]{
+        data.map {
+            MenuSectionModel(id: $0.id, name: $0.name, items: MenuItemEntity.mapperArray(data: $0.items))
+        }
     }
 }

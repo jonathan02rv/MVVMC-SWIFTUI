@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol MenuOrderRepositoryProtocol{
-    func getMenuSectionsService(_ completion:@escaping (Swift.Result<MenuSectionModel,ErrorModel>)->Void)
+    func getMenuSectionsService(_ completion:@escaping (Swift.Result<[MenuSectionModel],ErrorModel>)->Void)
 }

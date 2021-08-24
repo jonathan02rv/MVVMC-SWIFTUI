@@ -7,18 +7,18 @@
 
 import Foundation
 
-protocol MenuOrderUseCaseProtocol{
-    func getMenuSectionsService(_ completion:@escaping (Swift.Result<MenuSectionModel,ErrorModel>)->Void)
+public protocol MenuOrderUseCaseProtocol{
+    func getMenuSectionsService(_ completion:@escaping (Swift.Result<[MenuSectionModel],ErrorModel>)->Void)
 }
 
-struct MenuOrderUseCase: MenuOrderUseCaseProtocol{
+public struct MenuOrderUseCase: MenuOrderUseCaseProtocol{
     var repository: MenuOrderRepositoryProtocol
     
-    init(repository: MenuOrderRepositoryProtocol) {
+    public init(repository: MenuOrderRepositoryProtocol) {
         self.repository = repository
     }
     
-    func getMenuSectionsService(_ completion:@escaping (Swift.Result<MenuSectionModel,ErrorModel>)->Void){
+    public func getMenuSectionsService(_ completion:@escaping (Swift.Result<[MenuSectionModel],ErrorModel>)->Void){
         repository.getMenuSectionsService(completion)
     }
 }

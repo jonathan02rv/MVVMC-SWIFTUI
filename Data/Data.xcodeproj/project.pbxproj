@@ -25,6 +25,7 @@
 		3FF8578026D4684100A6DAA0 /* DataSourceLocalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8577F26D4684100A6DAA0 /* DataSourceLocalProtocol.swift */; };
 		3FF8578626D4686A00A6DAA0 /* DataSourceLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8578526D4686A00A6DAA0 /* DataSourceLocal.swift */; };
 		3FF8579926D4732F00A6DAA0 /* BaseResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8579826D4732F00A6DAA0 /* BaseResponseEntity.swift */; };
+		3FF857DA26D4BD5D00A6DAA0 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF857D926D4BD5D00A6DAA0 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		3FF8577F26D4684100A6DAA0 /* DataSourceLocalProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceLocalProtocol.swift; sourceTree = "<group>"; };
 		3FF8578526D4686A00A6DAA0 /* DataSourceLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceLocal.swift; sourceTree = "<group>"; };
 		3FF8579826D4732F00A6DAA0 /* BaseResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseEntity.swift; sourceTree = "<group>"; };
+		3FF857CC26D4BBFF00A6DAA0 /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
+		3FF857D926D4BD5D00A6DAA0 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,7 @@
 		3FF856E326D457A100A6DAA0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				3FF857CC26D4BBFF00A6DAA0 /* menu.json */,
 				3FF8570526D4581900A6DAA0 /* Repository */,
 				3FF8570A26D4584B00A6DAA0 /* DataSource */,
 				3FF856FD26D4580D00A6DAA0 /* Entity */,
@@ -229,6 +233,7 @@
 		3FF8572226D4585500A6DAA0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				3FF857D926D4BD5D00A6DAA0 /* Helper.swift */,
 				3FF8570D26D4584B00A6DAA0 /* RequestUtil.swift */,
 			);
 			path = Util;
@@ -369,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FF8570226D4580D00A6DAA0 /* MenuItemEntity.swift in Sources */,
+				3FF857DA26D4BD5D00A6DAA0 /* Helper.swift in Sources */,
 				3FF8571F26D4584C00A6DAA0 /* MenuSectionRequest.swift in Sources */,
 				3FF8578026D4684100A6DAA0 /* DataSourceLocalProtocol.swift in Sources */,
 				3FF8571C26D4584C00A6DAA0 /* ErrorHandler.swift in Sources */,

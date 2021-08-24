@@ -6,14 +6,18 @@
 //
 
 import SwiftUI
+import Domain
 
-struct ItemDetail: View {
+struct ItemDetail<ViewModel>: View where ViewModel: ItemDetailViewModelProtocol{
     
     @EnvironmentObject var order: Order
-    
-    let item: MenuItemModel
+        //var mainImage: String
+    //var photoCredit: String
+    //var description: String
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
+        let item = viewModel.getItemData()
         VStack {
             ZStack(alignment: .bottomTrailing) {
                 Image(item.mainImage)
@@ -29,6 +33,7 @@ struct ItemDetail: View {
             
             Text(item.description).padding().minimumScaleFactor(0.5)
             Button("Order This") {
+                //viewModel.addOrder(sectionId: sectionId, idItem: idItem)
                 order.add(item: item)
             }.font(.headline)
         }
@@ -42,8 +47,7 @@ struct ItemDetal_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             NavigationView {
-                ItemDetail(item: MenuItemModel.example)
-                    .environmentObject(Order())
+                ItemDetail(viewModel: MockItemDetailViewModel())
             }
         }
     }

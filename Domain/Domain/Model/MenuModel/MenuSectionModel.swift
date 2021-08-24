@@ -10,7 +10,7 @@ import Foundation
 public struct MenuSectionModel: Identifiable {
     public var id: String
     public var name: String
-    public var items: [MenuItemModel]
+    public var items = [MenuItemModel]()
     
     public init(id: String, name: String, items: [MenuItemModel]){
         self.id = id

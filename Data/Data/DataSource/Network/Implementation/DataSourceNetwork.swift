@@ -18,7 +18,7 @@ struct DataSourceNetwork: DataSourceNetworkProtocol{
     }
     
     //MARK: - Get Method
-    func getMenuSectionsService(request: RequestObject, _ completion:@escaping (Swift.Result<MenuSectionEntity,ErrorEntity>)->Void){
+    func getMenuSectionsService(request: RequestObject, _ completion:@escaping (Swift.Result<[MenuSectionEntity],ErrorEntity>)->Void){
         
         guard let requestRef = request as? RequestOBjectMenuSection else{return}
         let urlService = baseUrlConfig + requestRef.path
@@ -41,7 +41,7 @@ struct DataSourceNetwork: DataSourceNetworkProtocol{
                 return
             }
             
-            guard let dataResponse = try? JSONDecoder().decode(MenuSectionEntity.self, from: data ?? Data()) else{
+            guard let dataResponse = try? JSONDecoder().decode([MenuSectionEntity].self, from: data ?? Data()) else{
                 print("parse error")
                 completion(.failure(ErrorHandler.get(type: .mapperError, description: error?.localizedDescription)))
                 return

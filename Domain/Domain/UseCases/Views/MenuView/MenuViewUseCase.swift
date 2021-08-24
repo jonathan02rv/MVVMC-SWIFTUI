@@ -7,19 +7,19 @@
 
 import Foundation
 
-protocol MenuViewUseCaseProtocol {
-    func getMenuSectionsService(_ completion:@escaping (Swift.Result<MenuSectionModel,ErrorModel>)->Void)
+public protocol MenuViewUseCaseProtocol {
+    func getMenuSectionsService(_ completion:@escaping (Swift.Result<[MenuSectionModel],ErrorModel>)->Void)
 }
 
-struct MenuViewUseCase: MenuViewUseCaseProtocol {
+public struct MenuViewUseCase: MenuViewUseCaseProtocol {
     
     let useCase: MenuOrderUseCaseProtocol
     
-    init(useCase: MenuOrderUseCaseProtocol) {
+    public init(useCase: MenuOrderUseCaseProtocol) {
         self.useCase = useCase
     }
     
-    func getMenuSectionsService(_ completion:@escaping (Swift.Result<MenuSectionModel,ErrorModel>)->Void){
+    public func getMenuSectionsService(_ completion:@escaping (Swift.Result<[MenuSectionModel],ErrorModel>)->Void){
         self.useCase.getMenuSectionsService(completion)
     }
     

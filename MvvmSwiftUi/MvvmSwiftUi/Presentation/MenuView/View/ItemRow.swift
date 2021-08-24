@@ -7,11 +7,14 @@
 
 import SwiftUI
 
-struct ItemRow: View {
-        
-    let item: MenuItemModel
+struct ItemRow<ViewModel>: View where ViewModel: MenuViewModelProtocol{
+    
+    @ObservedObject var viewModel: ViewModel
+    @State var idItem:String
+    @State var sectionId:String
     
     var body: some View {
+        let item = viewModel.getItemData(sectionId: sectionId, idItem: idItem)
         HStack{
             Image(item.thumbnailImage)
                 .clipShape(Circle())
@@ -26,8 +29,10 @@ struct ItemRow: View {
     }
 }
 
+
 struct ItemRow_Previews: PreviewProvider {
     static var previews: some View {
-        ItemRow(item: MenuItemModel.example)
+        ItemRow(viewModel: MockMenuVieModel(), idItem: "", sectionId: "")
     }
 }
+

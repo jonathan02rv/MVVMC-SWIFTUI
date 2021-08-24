@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Domain
 
 class Order: ObservableObject {
     @Published var items = [MenuItemModel]()
