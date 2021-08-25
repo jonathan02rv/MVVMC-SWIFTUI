@@ -14,14 +14,19 @@ protocol OrderProtocol {
     func remove(item: MenuItemModel)
     func getItemsOrder()->[MenuItemModel]
     func deleteItems(at offsets: IndexSet)
+    func getTotal()->Int
 }
 
 struct OrderAdapter: OrderProtocol{
             
-    @ObservedObject var shareInstance = OrderManagerAUX.instance
+    var shareInstance = OrderManagerAUX.instance
     
     init() {
         print("INIT VIEW...")
+    }
+    
+    func getTotal()->Int{
+        shareInstance.getTotal()
     }
     
     func add(item: MenuItemModel) {

@@ -13,6 +13,7 @@ public protocol OrderProtocolAUX {
     func remove(item: MenuItemModel)
     func getItemsOrder()->[MenuItemModel]
     func deleteItems(at offsets: IndexSet)
+    func getTotal()->Int
 }
 
 public class OrderManagerAUX: ObservableObject {
@@ -28,6 +29,10 @@ public class OrderManagerAUX: ObservableObject {
         } else {
             return 0
         }
+    }
+    
+    public func getTotal()->Int{
+        total
     }
 
     public func add(item: MenuItemModel) {

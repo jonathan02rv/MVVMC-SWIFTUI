@@ -7,7 +7,11 @@
 
 import SwiftUI
 
-struct CheckoutView: View {
+struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol {
+    
+    @ObservedObject var viewModel: ViewModel
+    //let cordinator: OrderViewCordinatorProtocol
+    
     
     @EnvironmentObject var order: OrderManager
     
@@ -16,19 +20,9 @@ struct CheckoutView: View {
     @State private var showingPaymentAlert = false
     
     @State private var paymentType = "Credit Card"
-    let paymentTypes = ["Cash", "Credit Card", "Dinner Points"]
     
     @State private var tipAmount = 15
-    let tipAmounts = [10, 15, 20, 25, 0]
     
-    var totalPrice: String {
-        //let formatter = NumberFormatter()
-        //formatter.numberStyle = .currency
-        let total = Double(order.total)
-        let tipValue = total / 100 * Double(tipAmount)
-       //return formatter.string(from: NSNumber(value: total + tipValue)) ?? "$0"
-        return "$ \(total + tipValue)"
-    }
     
     var body: some View {
         
@@ -37,7 +31,7 @@ struct CheckoutView: View {
             Section(header: Text("Pay Method")) {
                 
                 Picker("How do you want to pay?", selection: $paymentType) {
-                    ForEach(paymentTypes, id: \.self) {
+                    ForEach(viewModel.paymentTypes, id: \.self) {
                         Text($0)
                     }
                 }
@@ -49,7 +43,7 @@ struct CheckoutView: View {
             
             Section(header: Text("Add a tip?")) {
                 Picker("Percentage:", selection: $tipAmount) {
-                    ForEach(tipAmounts, id: \.self) {
+                    ForEach(viewModel.tipAmounts, id: \.self) {
                         Text("\($0)%")
                     }
                 }
@@ -57,7 +51,7 @@ struct CheckoutView: View {
             }
             
             Section(header:
-                        Text("TOTAL: \(totalPrice)")
+                        Text("TOTAL: \(viewModel.totalPrice)")
                         .font(.title))
             {
                 Button("Confirm Order") {
@@ -67,7 +61,7 @@ struct CheckoutView: View {
         }
         .navigationBarTitle("Payment", displayMode: .inline)
         .alert(isPresented: $showingPaymentAlert, content: {
-            return Alert(title: Text("Order Confirmed"), message: Text("Your total was \(totalPrice)"), dismissButton: .default(Text("OK")))
+            return Alert(title: Text("Order Confirmed"), message: Text("Your total was \(viewModel.totalPrice)"), dismissButton: .default(Text("OK")))
         })
         .onAppear {
             print("CheckoutView appeared!")
@@ -80,7 +74,6 @@ struct CheckoutView: View {
 
 struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckoutView()
-            .environmentObject(OrderManager.instance)
+        CheckoutView(viewModel: MockCheckoutViewModel())
     }
 }

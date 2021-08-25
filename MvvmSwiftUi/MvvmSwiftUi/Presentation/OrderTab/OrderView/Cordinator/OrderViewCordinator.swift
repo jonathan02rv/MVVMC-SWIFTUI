@@ -9,11 +9,11 @@ import Foundation
 import Domain
 
 protocol OrderViewCordinatorProtocol{
-    func routeToCheckoutView()->CheckoutView
+    func routeToCheckoutView()->CheckoutView<CheckoutViewModel>
 }
 
 struct OrderViewCordinator: OrderViewCordinatorProtocol{
-    func routeToCheckoutView()->CheckoutView{
-        return CheckoutView()
+    func routeToCheckoutView()->CheckoutView<CheckoutViewModel>{
+        return CheckoutView(viewModel: CheckoutViewModel())
     }
 }
