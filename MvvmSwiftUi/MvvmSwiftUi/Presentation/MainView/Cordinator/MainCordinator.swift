@@ -11,6 +11,7 @@ import Domain
 
 protocol MainCordinatorProtocol{
     func getMenuView()-> MenuView<MenuViewModel>
+    func getOrderView()-> OrderView<OrderViewModel>
 }
 
 struct MainCordinator: MainCordinatorProtocol{
@@ -19,5 +20,9 @@ struct MainCordinator: MainCordinatorProtocol{
         let userCase = MenuViewUseCase(useCase: MenuOrderUseCase(repository: repository))
         let viewModel = MenuViewModel(userCaseMenu: userCase)
         return MenuView(viewModel: viewModel, cordinator: MenuViewCordinator())
+    }
+    
+    func getOrderView()-> OrderView<OrderViewModel>{
+        return OrderView(viewModel: OrderViewModel(), cordinator: OrderViewCordinator())
     }
 }

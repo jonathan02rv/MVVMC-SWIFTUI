@@ -6,55 +6,56 @@
 //
 
 import SwiftUI
+import Domain
 
-struct OrderView: View {
-    @EnvironmentObject var order: Order
+struct OrderView<ViewModel>: View where ViewModel : OrderViewModelPprotocol{
+        
+    @ObservedObject var viewModel: ViewModel
+    let cordinator: OrderViewCordinatorProtocol
     
     var body: some View {
         NavigationView {
             List {
                 Section(header: Text("Order List")) {
-                    ForEach(order.itemsOrder) { item in
+                    ForEach(viewModel.getItemsOrder()) { item in
                         HStack {
                             Text(item.name)
                             Spacer()
                             Text("$\(item.price)")
                         }
                     }
-                    //.onDelete(perform: self.deleteItems)
-                    .onDelete { self.deleteItems(at :$0) }
+                    .onDelete {
+                        viewModel.deleteItems(at: $0)
+                    }
                     //.onMove { self.moveItems(from: $0, to: $1) }
                 }
                 
                 Section {
                     NavigationLink(destination:
-                        CheckoutView()) {
+                                    cordinator.routeToCheckoutView()) {
                         Text("Place Order")
                             .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                     }
-                }.disabled(self.order.itemsOrder.isEmpty)
+                }.disabled(self.viewModel.getItemsOrder().isEmpty)
             }
             .navigationBarTitle("Order", displayMode: .large)
             .navigationBarItems(trailing:
                                     EditButton()
-                                    .disabled(self.order.itemsOrder.isEmpty))
+                                    .disabled(self.viewModel.getItemsOrder().isEmpty))
             .listStyle(GroupedListStyle())
         }
         .onAppear {
             print("OrderView appeared!")
+            viewModel.updateModel()
         }
         .onDisappear {
             print("OrderView disappeared!")
         }
     }
-    
-    func deleteItems(at offsets: IndexSet) {
-        order.itemsOrder.remove(atOffsets: offsets)
-    }
 }
 
 struct OrderView_Previews: PreviewProvider {
     static var previews: some View {
-        OrderView().environmentObject(Order.instance)
+        OrderView(viewModel: MockOrderView(), cordinator: OrderViewCordinator())
     }
 }

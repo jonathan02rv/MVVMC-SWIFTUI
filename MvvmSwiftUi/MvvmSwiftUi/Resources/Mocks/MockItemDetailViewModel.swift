@@ -9,7 +9,7 @@ import Foundation
 import Domain
 
 class MockItemDetailViewModel:ItemDetailViewModelProtocol{
-    func addOrder(item: MenuItemModel) {
+    func addItemToOrder(item: MenuItemModel) {
     }
     
     func getItemData() -> MenuItemModel {

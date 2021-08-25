@@ -29,8 +29,7 @@ struct ItemDetail<ViewModel>: View where ViewModel: ItemDetailViewModelProtocol{
             
             Text(item.description).padding().minimumScaleFactor(0.5)
             Button("Order This") {
-                //viewModel.addOrder(item: item)
-                viewModel.addOrder(item: item)
+                viewModel.addItemToOrder(item: item)
             }.font(.headline)
         }
         .navigationBarTitle("\(item.name)", displayMode: .inline)

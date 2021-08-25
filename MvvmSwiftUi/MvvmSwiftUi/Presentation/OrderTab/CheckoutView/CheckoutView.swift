@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CheckoutView: View {
     
-    @EnvironmentObject var order: Order
+    @EnvironmentObject var order: OrderManager
     
     @State private var addLoyaltyDetails = false
     @State private var loyaltyNumber = ""
@@ -81,6 +81,6 @@ struct CheckoutView: View {
 struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
         CheckoutView()
-            .environmentObject(Order.instance)
+            .environmentObject(OrderManager.instance)
     }
 }

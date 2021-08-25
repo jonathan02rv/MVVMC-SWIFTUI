@@ -1,22 +1,17 @@
 //
-//  Order.swift
-//  iDine
+//  OrderManager.swift
+//  MvvmSwiftUi
 //
-//  Created by Paul Hudson on 27/06/2019.
-//  Copyright © 2019 Hacking with Swift. All rights reserved.
+//  Created by Jhonatahan Orlando Rivera Vilcapoma on 25/08/21.
 //
 
-import SwiftUI
+import Foundation
+
 import Domain
 
-protocol OrderProtocol:class {
-    func add(item: MenuItemModel)
-    func remove(item: MenuItemModel)
-}
-
-class Order: ObservableObject, OrderProtocol {
+class OrderManager: ObservableObject {
     
-    static let instance = Order()
+    static var instance = OrderManager()
     private init(){}
     
     @Published var itemsOrder = [MenuItemModel]()

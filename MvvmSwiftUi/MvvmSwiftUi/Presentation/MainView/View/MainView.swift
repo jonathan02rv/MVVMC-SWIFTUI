@@ -20,7 +20,7 @@ struct MainView: View {
                     Image(systemName: "list.dash")
                     Text("Menu")
                 }
-            OrderView()
+            cordinator.getOrderView()
                 .tabItem {
                     Text("Order")
                     Image(systemName: "square.and.pencil")
@@ -32,6 +32,6 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView(cordinator: MainCordinator())
-            .environmentObject(Order.instance)
+            .environmentObject(OrderManager.instance)
     }
 }
