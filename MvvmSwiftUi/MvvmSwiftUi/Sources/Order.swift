@@ -15,6 +15,10 @@ protocol OrderProtocol:class {
 }
 
 class Order: ObservableObject, OrderProtocol {
+    
+    static let instance = Order()
+    private init(){}
+    
     @Published var itemsOrder = [MenuItemModel]()
 
     var total: Int {

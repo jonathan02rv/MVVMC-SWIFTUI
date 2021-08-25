@@ -10,7 +10,6 @@ import Domain
 
 struct ItemDetail<ViewModel>: View where ViewModel: ItemDetailViewModelProtocol{
     
-    @EnvironmentObject var order: Order
     @ObservedObject var viewModel: ViewModel
     
     var body: some View {
@@ -31,7 +30,7 @@ struct ItemDetail<ViewModel>: View where ViewModel: ItemDetailViewModelProtocol{
             Text(item.description).padding().minimumScaleFactor(0.5)
             Button("Order This") {
                 //viewModel.addOrder(item: item)
-                order.add(item: item)
+                viewModel.addOrder(item: item)
             }.font(.headline)
         }
         .navigationBarTitle("\(item.name)", displayMode: .inline)
