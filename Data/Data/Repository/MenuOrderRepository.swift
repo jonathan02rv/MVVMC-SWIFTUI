@@ -19,20 +19,21 @@ public struct MenuOrderRepository: MenuOrderRepositoryProtocol{
     }
     
     public func getMenuSectionsService(_ completion:@escaping (Swift.Result<[MenuSectionModel],ErrorModel>)->Void){
-        
-        /*
-        localDataSource.getMenuSectionsService { (result) in
+      
+        let request = RequestOBjectMenuSection()
+        networkDataSource.getMenuSectionsService(request: request) { (result) in
             switch result{
             case .success(let data):
                 completion(.success(MenuSectionEntity.maperArray(data: data)))
-            case .failure(let error):
-                completion(.failure(ErrorEntity.maper(errorData: error)))
+            case .failure(_):
+                getLocalData(completion)
             }
         }
+    }
+    
+    func getLocalData(_ completion:@escaping (Swift.Result<[MenuSectionModel],ErrorModel>)->Void){
         
-        return*/
-        let request = RequestOBjectMenuSection()
-        networkDataSource.getMenuSectionsService(request: request) { (result) in
+        localDataSource.getMenuSectionsService(fileName: "menu.json") { (result) in
             switch result{
             case .success(let data):
                 completion(.success(MenuSectionEntity.maperArray(data: data)))
