@@ -10,12 +10,7 @@ import SwiftUI
 struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol {
     
     @ObservedObject var viewModel: ViewModel
-    //let cordinator: OrderViewCordinatorProtocol
-    
-    
-    //@EnvironmentObject var order: OrderManager
-    
-    
+    let cordinator: CheckoutViewCordinatorProtocol
     
     
     var body: some View {
@@ -56,7 +51,7 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
         }
         .navigationBarTitle("Payment", displayMode: .inline)
         .alert(isPresented: $viewModel.showingPaymentAlert, content: {
-            return Alert(title: Text("Order Confirmed"), message: Text("Your total was \(viewModel.totalPrice)"), dismissButton: .default(Text("OK")))
+            cordinator.showAlert(totalPrice: viewModel.totalPrice)
         })
         .onAppear {
             print("CheckoutView appeared!")
@@ -69,6 +64,6 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
 
 struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckoutView(viewModel: MockCheckoutViewModel())
+        CheckoutView(viewModel: MockCheckoutViewModel(), cordinator: CheckoutViewCordinator())
     }
 }

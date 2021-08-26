@@ -14,6 +14,6 @@ protocol OrderViewCordinatorProtocol{
 
 struct OrderViewCordinator: OrderViewCordinatorProtocol{
     func routeToCheckoutView()->CheckoutView<CheckoutViewModel>{
-        return CheckoutView(viewModel: CheckoutViewModel())
+        return CheckoutView(viewModel: CheckoutViewModel(), cordinator: CheckoutViewCordinator())
     }
 }

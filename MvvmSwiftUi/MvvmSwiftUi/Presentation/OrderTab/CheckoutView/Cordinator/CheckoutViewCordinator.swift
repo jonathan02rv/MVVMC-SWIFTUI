@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
 
 protocol CheckoutViewCordinatorProtocol{
-    func showAlert()
+    func showAlert(totalPrice: String)->Alert
 }
 
 struct CheckoutViewCordinator: CheckoutViewCordinatorProtocol{
-    func showAlert(){
-        
+    func showAlert(totalPrice: String)-> Alert{
+        Alert(title: Text("Order Confirmed"), message: Text("Your total was \(totalPrice)"), dismissButton: .default(Text("OK")))
     }
 }
