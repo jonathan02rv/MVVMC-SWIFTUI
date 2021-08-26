@@ -16,9 +16,7 @@ struct ItemRow<ViewModel>: View where ViewModel: MenuViewModelProtocol{
     var body: some View {
         let item = viewModel.getItemData(sectionId: sectionId, idItem: idItem)
         HStack{
-            Image(item.thumbnailImage)
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.gray, lineWidth: 3.0))
+            Image(item.thumbnailImage).cornerRadius(10.0)
             VStack(alignment: .leading){
                 Text(item.name).font(.caption)
                 Text("$\(item.price)")
