@@ -9,6 +9,10 @@ import Foundation
 
 
 class MockCheckoutViewModel: CheckoutViewModelProtocol{
+    func confirmOrder() {
+        
+    }
+    
     var loyaltyNumber: String = ""
     
     var addLoyaltyDetails: Bool = false

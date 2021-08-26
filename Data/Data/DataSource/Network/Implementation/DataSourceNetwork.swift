@@ -17,6 +17,30 @@ struct DataSourceNetwork: DataSourceNetworkProtocol{
         urlSession = URLSession(configuration: self.urlSessionConfiguration)
     }
     
+    //MARK: - PostMethod
+    func confirmOrder(request: RequestObject,_ completion: @escaping (Swift.Result<Void, ErrorEntity>) -> Void){
+        
+        guard let requestRef = request as? RequestOBjectCheckoukOrder else{return}
+        let urlService = baseUrlConfig + requestRef.path
+        
+        guard let urlRequest = RequestUtil.getUrlRequest(urlService: urlService, request: requestRef) else{return}
+        guard let jsonData = RequestUtil.getJSONData(params: requestRef.parameters) else {return}
+        
+        urlSession.uploadTask(with: urlRequest, from: jsonData) { (data, response, error) in
+            
+            let responseString = String(data: data ?? Data(), encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))
+            debugPrint("RESPONSE: \(responseString ?? "")")
+            
+            guard error == nil else{
+                guard let errorResponse = try? JSONDecoder().decode(BaseResponseEntity.self, from: data ?? Data()) else{
+                    return completion(.failure(ErrorHandler.get(type: .httpError, description: error?.localizedDescription)))
+                }
+                return completion(.failure(ErrorHandler.get(code: errorResponse.code, description: errorResponse.description)))
+            }
+            completion(.success(()))
+        }.resume()
+    }
+    
     //MARK: - Get Method
     func getMenuSectionsService(request: RequestObject, _ completion:@escaping (Swift.Result<[MenuSectionEntity],ErrorEntity>)->Void){
         

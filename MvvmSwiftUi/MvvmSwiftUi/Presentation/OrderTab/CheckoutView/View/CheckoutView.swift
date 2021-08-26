@@ -46,6 +46,7 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
             {
                 Button("Confirm Order") {
                     self.viewModel.showingPaymentAlert.toggle()
+                    self.viewModel.confirmOrder()
                 }
             }
         }

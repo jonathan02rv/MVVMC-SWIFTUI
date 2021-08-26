@@ -17,6 +17,7 @@ protocol CheckoutViewModelProtocol: ObservableObject{
     var loyaltyNumber: String {get set}
     var addLoyaltyDetails:Bool {get set}
     var showingPaymentAlert:Bool {get set}
+    func confirmOrder()
 }
 
 class CheckoutViewModel: CheckoutViewModelProtocol{
@@ -42,12 +43,23 @@ class CheckoutViewModel: CheckoutViewModelProtocol{
     @Published var itemsOrder = [MenuItemModel]()
  
     var globalOrder: OrderProtocol
-    
-    init() {
+
+    var useCaseCheckout: CheckoutViewUseCaseProtocol
+    init(useCaseCheckout: CheckoutViewUseCaseProtocol) {
         self.globalOrder = OrderAdapter()
+        self.useCaseCheckout = useCaseCheckout
     }
     
     
-    
+    func confirmOrder(){
+        useCaseCheckout.confirmOrder(totalAmount: self.totalPrice) { (result) in
+            switch result {
+            case .success():
+                print("SUCCESS PAYMENT")
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import Domain
+import Data
 
 protocol OrderViewCordinatorProtocol{
     func routeToCheckoutView()->CheckoutView<CheckoutViewModel>
@@ -14,6 +15,11 @@ protocol OrderViewCordinatorProtocol{
 
 struct OrderViewCordinator: OrderViewCordinatorProtocol{
     func routeToCheckoutView()->CheckoutView<CheckoutViewModel>{
-        return CheckoutView(viewModel: CheckoutViewModel(), cordinator: CheckoutViewCordinator())
+        
+        let repository = MenuOrderRepository()
+        let userCase = CheckoutViewUseCase(useCase: MenuOrderUseCase(repository: repository))
+        let viewModel = CheckoutViewModel(useCaseCheckout: userCase)
+        
+        return CheckoutView(viewModel: viewModel, cordinator: CheckoutViewCordinator())
     }
 }

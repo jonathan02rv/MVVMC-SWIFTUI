@@ -9,4 +9,5 @@ import Foundation
 
 public protocol MenuOrderRepositoryProtocol{
     func getMenuSectionsService(_ completion:@escaping (Swift.Result<[MenuSectionModel],ErrorModel>)->Void)
+    func confirmOrder(totalAmount: String,_ completion: @escaping (Swift.Result<Void,ErrorModel>)->Void)
 }

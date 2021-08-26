@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F545E7826D67F870027837D /* OrderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F545E7726D67F870027837D /* OrderManager.swift */; };
+		3F545ECC26D83AB30027837D /* CheckoutViewUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F545ECB26D83AB30027837D /* CheckoutViewUseCase.swift */; };
 		3FF8561426D4249400A6DAA0 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF8560A26D4249300A6DAA0 /* Domain.framework */; };
 		3FF8561926D4249400A6DAA0 /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8561826D4249400A6DAA0 /* DomainTests.swift */; };
 		3FF8561B26D4249400A6DAA0 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FF8560D26D4249300A6DAA0 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		3F545E7726D67F870027837D /* OrderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderManager.swift; sourceTree = "<group>"; };
+		3F545ECB26D83AB30027837D /* CheckoutViewUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewUseCase.swift; sourceTree = "<group>"; };
 		3FF8560A26D4249300A6DAA0 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF8560D26D4249300A6DAA0 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		3FF8560E26D4249300A6DAA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,6 +72,14 @@
 				3F545E7726D67F870027837D /* OrderManager.swift */,
 			);
 			path = OrderManager;
+			sourceTree = "<group>";
+		};
+		3F545ECA26D83A890027837D /* CheckoutView */ = {
+			isa = PBXGroup;
+			children = (
+				3F545ECB26D83AB30027837D /* CheckoutViewUseCase.swift */,
+			);
+			path = CheckoutView;
 			sourceTree = "<group>";
 		};
 		3FF8560026D4249300A6DAA0 = {
@@ -159,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				3FF857A426D47DE900A6DAA0 /* MenuView */,
+				3F545ECA26D83A890027837D /* CheckoutView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,6 +297,7 @@
 				3FF857A626D47E2600A6DAA0 /* MenuViewUseCase.swift in Sources */,
 				3F545E7826D67F870027837D /* OrderManager.swift in Sources */,
 				3FF8579326D46BC700A6DAA0 /* ErrorModel.swift in Sources */,
+				3F545ECC26D83AB30027837D /* CheckoutViewUseCase.swift in Sources */,
 				3FF8578D26D46B3A00A6DAA0 /* MenuOrderRepositoryProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

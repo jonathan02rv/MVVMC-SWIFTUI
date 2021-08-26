@@ -42,4 +42,17 @@ public struct MenuOrderRepository: MenuOrderRepositoryProtocol{
             }
         }
     }
+    
+    public func confirmOrder(totalAmount: String, _ completion: @escaping (Swift.Result<Void, ErrorModel>) -> Void) {
+        let params = ["totalAmount":totalAmount]
+        let request = RequestOBjectCheckoukOrder(params: params)
+        networkDataSource.confirmOrder(request: request) { (result) in
+            switch result{
+            case .success():
+                completion(.success(()))
+            case .failure(let error):
+                completion(.failure(ErrorEntity.maper(errorData: error)))
+            }
+        }
+    }
 }
