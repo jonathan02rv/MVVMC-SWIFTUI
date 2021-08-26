@@ -8,7 +8,7 @@
 import Foundation
 
 import Domain
-
+/*
 class OrderManager: ObservableObject {
     
     static var instance = OrderManager()
@@ -34,3 +34,4 @@ class OrderManager: ObservableObject {
         }
     }
 }
+*/

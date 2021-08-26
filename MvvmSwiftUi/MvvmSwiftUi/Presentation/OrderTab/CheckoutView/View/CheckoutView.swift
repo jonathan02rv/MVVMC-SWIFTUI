@@ -13,15 +13,9 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
     //let cordinator: OrderViewCordinatorProtocol
     
     
-    @EnvironmentObject var order: OrderManager
+    //@EnvironmentObject var order: OrderManager
     
-    @State private var addLoyaltyDetails = false
-    @State private var loyaltyNumber = ""
-    @State private var showingPaymentAlert = false
     
-    @State private var paymentType = "Credit Card"
-    
-    @State private var tipAmount = 15
     
     
     var body: some View {
@@ -30,21 +24,22 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
             
             Section(header: Text("Pay Method")) {
                 
-                Picker("How do you want to pay?", selection: $paymentType) {
+                Picker("How do you want to pay?", selection: $viewModel.paymentType) {
                     ForEach(viewModel.paymentTypes, id: \.self) {
                         Text($0)
                     }
                 }
-                Toggle("Add Loyalty Card", isOn: $addLoyaltyDetails.animation())
-                if addLoyaltyDetails{
-                    TextField("Enter your Loyalty Card Number",text: $loyaltyNumber)
+                Toggle("Add Loyalty Card", isOn: $viewModel.addLoyaltyDetails.animation())
+                if viewModel.addLoyaltyDetails{
+                    TextField("Enter your Loyalty Card Number",text: $viewModel.loyaltyNumber)
                 }
             }
             
             Section(header: Text("Add a tip?")) {
-                Picker("Percentage:", selection: $tipAmount) {
+                Picker("Percentage:", selection: $viewModel.tipAmount) {
+                    
                     ForEach(viewModel.tipAmounts, id: \.self) {
-                        Text("\($0)%")
+                        return Text("\($0)%")
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
@@ -55,12 +50,12 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
                         .font(.title))
             {
                 Button("Confirm Order") {
-                    self.showingPaymentAlert.toggle()
+                    self.viewModel.showingPaymentAlert.toggle()
                 }
             }
         }
         .navigationBarTitle("Payment", displayMode: .inline)
-        .alert(isPresented: $showingPaymentAlert, content: {
+        .alert(isPresented: $viewModel.showingPaymentAlert, content: {
             return Alert(title: Text("Order Confirmed"), message: Text("Your total was \(viewModel.totalPrice)"), dismissButton: .default(Text("OK")))
         })
         .onAppear {

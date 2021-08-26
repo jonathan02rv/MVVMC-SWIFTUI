@@ -9,6 +9,17 @@ import Foundation
 
 
 class MockCheckoutViewModel: CheckoutViewModelProtocol{
+    var loyaltyNumber: String = ""
+    
+    var addLoyaltyDetails: Bool = false
+    
+    var showingPaymentAlert: Bool = false
+    
+    var paymentType: String = ""
+    
+    var tipAmount: Int = 0
+    
+    
     var paymentTypes: [String] = []
     
     var tipAmounts: [Int] = []

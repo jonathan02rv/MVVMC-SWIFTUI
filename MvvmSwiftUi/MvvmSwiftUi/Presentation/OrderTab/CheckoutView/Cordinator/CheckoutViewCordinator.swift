@@ -8,9 +8,11 @@
 import Foundation
 
 protocol CheckoutViewCordinatorProtocol{
-    
+    func showAlert()
 }
 
 struct CheckoutViewCordinator: CheckoutViewCordinatorProtocol{
-    
+    func showAlert(){
+        
+    }
 }
