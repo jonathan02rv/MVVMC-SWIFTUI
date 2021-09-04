@@ -1,0 +1,94 @@
+[
+	{
+		"name": "Dessert",
+        "id": "1C89DAFD-7653-4EF2-BF20-C51A159BAC43",
+		"items": [
+			{
+                "id": "AB7E38EA-05A7-426A-AFF3-B3A32B3E86BF",
+				"name": "Strawberry Surprise",
+				"photoCredit": "Karly Gomez",
+				"price": 6,
+				"restrictions": ["D", "V"],
+                "description": "Bob, people keep asking us why this thing has D and V for its restrictions, and it's making other customers worry that we are some sort of D&V hotspot. [NOTE FOR BOB: Can we find another word for dairy intolerance?]"
+			},
+			{
+                "id": "758ABBE3-F338-4F7C-BAC7-8D61BC1FB329",
+				"name": "Macarons Galore",
+				"photoCredit": "Mana",
+				"price": 8,
+				"restrictions": ["N", "V"],
+				"description": "For times when one, two, or even three macarons aren't enough, we're proud to present macarons galore – four macarons, to fully satisfy your craving for these sweet almondy delights!"
+			},
+			{
+                "id": "A73E2D2D-D53A-46D4-8829-62011EEF7DA4",
+				"name": "All Out Donuts",
+				"photoCredit": "Kobby Mendez",
+				"price": 5,
+				"restrictions": ["G", "V"],
+				"description": "Donuts! More donuts! And yet more donuts! Exactly how many you get depends on the day – we pretty much cram them all on to a plate then see how many we can balance as we walk them to your table."
+			},
+			{
+                "id": "971CFDDD-2AFA-418F-909F-D459CC6827CF",
+				"name": "Super Sundae",
+				"photoCredit": "Camila Melim",
+				"price": 7,
+				"restrictions": ["D", "V"],
+				"description": "This is no regular sundae – it's a super sundae! I think that means it wears glasses and has an unusual fear of kryptonite? Yeah, that sounds about right."
+			}
+		]
+	},
+	{
+		"name": "Drinks",
+        "id": "CE3C67F9-79E3-46E3-B134-362A52ABFE3C",
+		"items": [
+			{
+                "id": "A4D89AF9-190E-4409-B924-AABD13DBB6A4",
+				"name": "Virgin Mojito",
+				"photoCredit": "Melissa Walker Horn",
+				"price": 5,
+				"restrictions": ["V"],
+				"description": "The mojito is a classic drink of rum, mint, lime, and soda, but without the rum. So, this is basically an expensive glass of Sprite. We might put an umbrella in it so you don't feel quite so scammed."
+			},
+			{
+                "id": "FC201614-1418-4152-9469-087B27485D13",
+				"name": "Strawberry Cooler",
+				"photoCredit": "Alex Loup",
+				"price": 6,
+				"restrictions": ["V"],
+                "description": "Step 1: Blend some frozen strawberries. Step 3: Profit! If you're reading this it means you've figured out step 2 for yourself."
+			},
+			{
+                "id": "58CE3F3E-74E1-4C5F-A630-986B187788B5",
+				"name": "Powerhouse coffee",
+				"photoCredit": "Nathan Dumlao",
+				"price": 3,
+				"restrictions": ["V"],
+				"description": "In the same way that brandy is distilled wine, this is distilled coffee. Yes, we literally boil coffee again and again to remove as much water as possible, leaving some black goopy stuff that is pretty much guaranteed to make your eyes pop."
+			},
+			{
+                "id": "71B872F2-3B5D-46D0-9D98-E696B4AE30E4",
+				"name": "Mexican Mocha",
+				"photoCredit": "Nathan Dumlao",
+				"price": 7,
+				"restrictions": ["D", "V"],
+				"description": "What do you get if you mix spicy Mexican chocolate into coffee? I mean, the answer is pretty much in the name – we really ought to get a better marketing team."
+			},
+			{
+                "id": "DE58CEFF-7023-4B60-88CC-80C5B7BFB6EC",
+				"name": "Chrysanthemum Tea",
+				"photoCredit": "Loverna Journey",
+				"price": 4,
+				"restrictions": ["V"],
+				"description": "This is tea made from chrysanthemum. No, we're not quite sure how that works either. Do we press the leaves? Is chrysanthemum even a plant? It sounds like some sort of wild animal. Maybe we milked it to make this drink."
+			},
+			{
+                "id": "E7584DB6-2EAE-4178-ADB2-9E5DBD5215EA",
+				"name": "Straight Up OJ",
+				"photoCredit": "Alexander Mils",
+				"price": 3,
+				"restrictions": ["V"],
+                "description": "What do you get if you pour a whole bottle of orange juice into a glass? This – you get this. Fun fact: oranges aren't named that because they are colored orange, but because they are high in the vitamin orangoflavin. (Note: not actually true.)"
+			}
+		]
+	}
+]
