@@ -4,7 +4,7 @@ This project showed 3 modules: UI, Domain, and Data layer for decoupling the cod
 
 UI Layer (iOS project):
 -----------------------
-In this example, I implemented MVVM-C design pattern for UI Layer. But we can use VIPER, MVP, MVC ...
+In this example, I implemented MVVM-C design pattern with SwiftUI for UI Layer. But we can use VIPER, MVP, MVC ...
 
 Domain Layer (Framework project):
 ------------------------------------
