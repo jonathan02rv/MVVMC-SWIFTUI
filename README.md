@@ -4,15 +4,21 @@ This project showed 3 modules: UI, Domain, and Data layer for decoupling the cod
 
 UI Layer (iOS project):
 -----------------------
-In this example, I implemented MVVM-C design pattern with SwiftUI for UI Layer. But we can use VIPER, MVP, MVC ...
+In this example, I implemented MVVM-C design pattern with SwiftUI for UI Layer. But we can use VIPER, MVP, MVC and so on.
+Our Views have a ViewModel for fill it and Cordinator for navigation views
+Our ViewModels have a dependency of Use Case Class
+We must have only the use case methods that each view will use.
 
 Domain Layer (Framework project):
 ------------------------------------
 There are the business logic and repository protocol will be implemented in Data Layer
+We have any methods approach to a specific use cases group.
 
 Data Layer (Framework proyect):
 ----------------------------------
-There is the implementation of Data Source and we can choose where from we want to get our data (Remote API, local Data, ... )
+There is the implementation of Data Source and we can choose where from we want to get our data (web API, local Data, ... )
+Web API: We can implement URLSESSION, Alamofire, and so on.
+Local Data: We can implement userDefaults, local files, CoreData, Keychain, and so on.
 
 
 This is the Architecture's diagram:
