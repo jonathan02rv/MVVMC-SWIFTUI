@@ -16,9 +16,9 @@ public protocol OrderProtocolAUX {
     func getTotal()->Int
 }
 
-public class OrderManagerAUX: ObservableObject {
+public class OrderManager: ObservableObject {
 
-    public static var instance = OrderManagerAUX()
+    public static var instance = OrderManager()
     private init(){}
     
     @Published public var itemsOrder = [MenuItemModel]()
