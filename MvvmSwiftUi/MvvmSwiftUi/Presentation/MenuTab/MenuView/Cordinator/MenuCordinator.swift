@@ -6,14 +6,14 @@
 //
 
 import Foundation
-import Domain
+//import Domain
 
 protocol MenuViewCordinatorProtocol{
-    func routeToDetailItem(itemMenu: MenuItemModel)->ItemDetail<ItemDetailViewModel>
+    func routeToDetailItem(itemMenu: ItemModel)->ItemDetail<ItemDetailViewModel>
 }
 
 struct MenuViewCordinator: MenuViewCordinatorProtocol{
-    func routeToDetailItem(itemMenu: MenuItemModel) -> ItemDetail<ItemDetailViewModel> {
+    func routeToDetailItem(itemMenu: ItemModel) -> ItemDetail<ItemDetailViewModel> {
         let viewModel = ItemDetailViewModel(itemMenu: itemMenu)
         return ItemDetail(viewModel: viewModel)
     }

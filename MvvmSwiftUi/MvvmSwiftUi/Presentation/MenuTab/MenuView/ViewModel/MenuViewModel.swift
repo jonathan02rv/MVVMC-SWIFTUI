@@ -6,17 +6,16 @@
 //
 
 import Foundation
-import Domain
 
 protocol MenuViewModelProtocol:ObservableObject{
     func callServiceMenuSections()
-    func getAllSections()->[MenuSectionModel]
-    func getItemData(sectionId:String, idItem:String)->MenuItemModel
+    func getAllSections()->[MenuModel]
+    func getItemData(sectionId:String, idItem:String)->ItemModel
 }
 
 class MenuViewModel: MenuViewModelProtocol{
     
-    @Published var menuSections = [MenuSectionModel]()
+    @Published var menuSections = [MenuModel]()
     
     var userCaseMenu: MenuViewUseCaseProtocol
     
@@ -24,7 +23,7 @@ class MenuViewModel: MenuViewModelProtocol{
         self.userCaseMenu = userCaseMenu
     }
 
-    func getAllSections()->[MenuSectionModel]{
+    func getAllSections()->[MenuModel]{
         return menuSections
     }
     
@@ -41,9 +40,9 @@ class MenuViewModel: MenuViewModelProtocol{
         }
     }
     
-    func getItemData(sectionId:String, idItem:String)->MenuItemModel{
+    func getItemData(sectionId:String, idItem:String)->ItemModel{
         let item = (self.menuSections.first{$0.id == sectionId})?.items.first{$0.id == idItem}
-        return item ?? MenuItemModel.emptyItem
+        return item ?? ItemModel.emptyItem
     }
     
 }

@@ -6,17 +6,16 @@
 //
 
 import Foundation
-import Domain
 
 protocol OrderViewModelPprotocol: ObservableObject {
-    func getItemsOrder()->[MenuItemModel]
+    func getItemsOrder()->[ItemModel]
     func deleteItems(at offsets: IndexSet)
     func updateModel()
 }
 
 class OrderViewModel: OrderViewModelPprotocol{
     
-    @Published var itemsOrder = [MenuItemModel]()
+    @Published var itemsOrder = [ItemModel]()
  
     private var globalOrder: OrderProtocol
     
@@ -24,7 +23,7 @@ class OrderViewModel: OrderViewModelPprotocol{
         self.globalOrder = OrderAdapter()
     }
     
-    func getItemsOrder()->[MenuItemModel]{
+    func getItemsOrder()->[ItemModel]{
         return globalOrder.getItemsOrder()
     }
     

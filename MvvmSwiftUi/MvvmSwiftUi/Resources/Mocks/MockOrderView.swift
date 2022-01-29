@@ -17,11 +17,11 @@ class MockOrderView:OrderViewModelPprotocol{
         
     }
     
-    func getItemsOrder() -> [MenuItemModel] {
-        return [MenuItemModel]()
+    func getItemsOrder() -> [ItemModel] {
+        return [ItemModel]()
     }
     
-    func removeItemToOrder(item: MenuItemModel) {
+    func removeItemToOrder(item: ItemModel) {
         
     }
     

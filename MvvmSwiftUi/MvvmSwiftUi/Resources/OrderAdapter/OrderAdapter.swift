@@ -10,16 +10,16 @@ import Domain
 import SwiftUI
 
 protocol OrderProtocol {
-    func add(item: MenuItemModel)
-    func remove(item: MenuItemModel)
-    func getItemsOrder()->[MenuItemModel]
+    func add(item: ItemModel)
+    func remove(item: ItemModel)
+    func getItemsOrder()->[ItemModel]
     func deleteItems(at offsets: IndexSet)
     func getTotal()->Int
 }
 
 struct OrderAdapter: OrderProtocol{
             
-    var shareInstance = OrderManagerAUX.instance
+    var shareInstance = OrderManager.instance
     
     init() {
         print("INIT VIEW...")
@@ -29,19 +29,19 @@ struct OrderAdapter: OrderProtocol{
         shareInstance.getTotal()
     }
     
-    func add(item: MenuItemModel) {
-        shareInstance.add(item: item)
+    func add(item: ItemModel) {
+        shareInstance.add(item: ItemModel.mapperModel(item: item))
     }
     
     func deleteItems(at offsets: IndexSet){
         shareInstance.deleteItems(at: offsets)
     }
     
-    func remove(item: MenuItemModel) {
+    func remove(item: ItemModel) {
         //shareInstance.remove(item: item)
     }
     
-    func getItemsOrder()->[MenuItemModel]{
-        shareInstance.itemsOrder
+    func getItemsOrder()->[ItemModel]{
+        ItemModel.mapArray(itemsData: shareInstance.itemsOrder)
     }
 }

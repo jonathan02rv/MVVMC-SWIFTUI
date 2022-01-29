@@ -20,7 +20,6 @@
 		3FF8572026D4584C00A6DAA0 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8571726D4584B00A6DAA0 /* RequestProtocol.swift */; };
 		3FF8572126D4584C00A6DAA0 /* DataSourceNetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8571926D4584B00A6DAA0 /* DataSourceNetworkProtocol.swift */; };
 		3FF8572F26D4593F00A6DAA0 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8572D26D4593F00A6DAA0 /* DataTests.swift */; };
-		3FF8573026D4593F00A6DAA0 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FF8572E26D4593F00A6DAA0 /* Info.plist */; };
 		3FF8573626D459B000A6DAA0 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF8573526D459B000A6DAA0 /* Domain.framework */; };
 		3FF8577626D466C400A6DAA0 /* MenuOrderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8577526D466C400A6DAA0 /* MenuOrderRepository.swift */; };
 		3FF8578026D4684100A6DAA0 /* DataSourceLocalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8577F26D4684100A6DAA0 /* DataSourceLocalProtocol.swift */; };
@@ -329,7 +328,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					3FF856E026D457A100A6DAA0 = {
 						CreatedOnToolsVersion = 12.4;
@@ -371,7 +370,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FF8573026D4593F00A6DAA0 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

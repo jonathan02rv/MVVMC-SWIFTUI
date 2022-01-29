@@ -6,15 +6,15 @@
 //
 
 import Foundation
-import Domain
+//import Domain
 
 class MockMenuVieModel:MenuViewModelProtocol{
-    func getAllSections() -> [MenuSectionModel] {
-        return [MenuSectionModel]()
+    func getAllSections() -> [MenuModel] {
+        return [MenuModel]()
     }
     
-    func getItemData(sectionId: String, idItem: String) -> MenuItemModel {
-        return MenuItemModel.emptyItem
+    func getItemData(sectionId: String, idItem: String) -> ItemModel {
+        return ItemModel.emptyItem
     }
     func addOrder(sectionId: String, idItem: String) {
     }

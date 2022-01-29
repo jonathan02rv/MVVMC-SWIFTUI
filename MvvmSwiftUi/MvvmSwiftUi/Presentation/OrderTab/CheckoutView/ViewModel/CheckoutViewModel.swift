@@ -40,7 +40,7 @@ class CheckoutViewModel: CheckoutViewModelProtocol{
     let tipAmounts = [10, 15, 20, 25, 0]
     
     
-    @Published var itemsOrder = [MenuItemModel]()
+    @Published var itemsOrder = [ItemModel]()
  
     var globalOrder: OrderProtocol
 

@@ -17,7 +17,6 @@
 		3FF8578D26D46B3A00A6DAA0 /* MenuOrderRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8578C26D46B3A00A6DAA0 /* MenuOrderRepositoryProtocol.swift */; };
 		3FF8579326D46BC700A6DAA0 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8579226D46BC700A6DAA0 /* ErrorModel.swift */; };
 		3FF8579F26D47A3900A6DAA0 /* MenuOrderUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8579E26D47A3900A6DAA0 /* MenuOrderUseCase.swift */; };
-		3FF857A626D47E2600A6DAA0 /* MenuViewUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF857A526D47E2600A6DAA0 /* MenuViewUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +43,6 @@
 		3FF8578C26D46B3A00A6DAA0 /* MenuOrderRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOrderRepositoryProtocol.swift; sourceTree = "<group>"; };
 		3FF8579226D46BC700A6DAA0 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		3FF8579E26D47A3900A6DAA0 /* MenuOrderUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOrderUseCase.swift; sourceTree = "<group>"; };
-		3FF857A526D47E2600A6DAA0 /* MenuViewUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,18 +166,9 @@
 		3FF8579D26D479CF00A6DAA0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3FF857A426D47DE900A6DAA0 /* MenuView */,
 				3F545ECA26D83A890027837D /* CheckoutView */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		3FF857A426D47DE900A6DAA0 /* MenuView */ = {
-			isa = PBXGroup;
-			children = (
-				3FF857A526D47E2600A6DAA0 /* MenuViewUseCase.swift */,
-			);
-			path = MenuView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,7 +283,6 @@
 				3FF8579F26D47A3900A6DAA0 /* MenuOrderUseCase.swift in Sources */,
 				3FF8569726D447D100A6DAA0 /* MenuSectionModel.swift in Sources */,
 				3FF8569D26D4480000A6DAA0 /* MenuItemModel.swift in Sources */,
-				3FF857A626D47E2600A6DAA0 /* MenuViewUseCase.swift in Sources */,
 				3F545E7826D67F870027837D /* OrderManager.swift in Sources */,
 				3FF8579326D46BC700A6DAA0 /* ErrorModel.swift in Sources */,
 				3F545ECC26D83AB30027837D /* CheckoutViewUseCase.swift in Sources */,

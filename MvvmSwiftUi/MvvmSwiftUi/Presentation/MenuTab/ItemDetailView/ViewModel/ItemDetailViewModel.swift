@@ -6,28 +6,27 @@
 //
 
 import Foundation
-import Domain
 
 protocol ItemDetailViewModelProtocol: ObservableObject{
-    func getItemData()->MenuItemModel
-    func addItemToOrder(item: MenuItemModel)
+    func getItemData()->ItemModel
+    func addItemToOrder(item: ItemModel)
 }
 
 class ItemDetailViewModel: ItemDetailViewModelProtocol{
-    @Published var itemMenu: MenuItemModel
+    @Published var itemMenu: ItemModel
     
     private var globalOrder: OrderProtocol?
     
-    init(itemMenu: MenuItemModel) {
+    init(itemMenu: ItemModel) {
         self.itemMenu = itemMenu
         self.globalOrder = OrderAdapter()
     }
     
-    func getItemData()->MenuItemModel{
+    func getItemData()->ItemModel{
         return itemMenu
     }
     
-    func addItemToOrder(item: MenuItemModel){
+    func addItemToOrder(item: ItemModel){
         globalOrder?.add(item: item)
     }
 }
