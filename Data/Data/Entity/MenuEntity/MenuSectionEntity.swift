@@ -8,7 +8,7 @@
 import Foundation
 import Domain
 
-struct MenuSectionEntity: Codable{
+public struct MenuSectionEntity: Codable{
     var id: String
     var name: String
     var items: [MenuItemEntity]

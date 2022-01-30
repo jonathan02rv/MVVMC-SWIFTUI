@@ -13,9 +13,13 @@ public struct MenuOrderRepository: MenuOrderRepositoryProtocol{
     private let networkDataSource: DataSourceNetworkProtocol
     private let localDataSource: DataSourceLocalProtocol
     
-    public init(){
-        self.networkDataSource = DataSourceNetwork()
-        self.localDataSource = DataSourceLocal()
+    public init(networkSource:DataSourceNetworkProtocol, localSource: DataSourceLocalProtocol){
+        self.networkDataSource = networkSource
+        self.localDataSource = localSource
+    }
+    
+    public init() {
+        self.init(networkSource: DataSourceNetwork(), localSource: DataSourceLocal())
     }
     
     public func getMenuSectionsService(_ completion:@escaping (Swift.Result<[MenuSectionModel],ErrorModel>)->Void){

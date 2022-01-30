@@ -10,7 +10,7 @@ import Foundation
 public typealias HTTPHeaders = [String: String]
 public typealias Parameters = [String: Any]
 
-enum HTTPMethod: String {
+public enum HTTPMethod: String {
     case options = "OPTIONS"
     case get     = "GET"
     case head    = "HEAD"
@@ -22,7 +22,7 @@ enum HTTPMethod: String {
     case connect = "CONNECT"
 }
 
-internal protocol RequestObject {
+public protocol RequestObject {
     var path: String { get }
     var method: HTTPMethod { get }
     var headers: HTTPHeaders { get }

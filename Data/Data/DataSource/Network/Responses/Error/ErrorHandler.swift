@@ -16,7 +16,7 @@ enum ErrorServiceType:String{
     case custom
 }
 
-struct ErrorEntity: Error{
+public struct ErrorEntity: Error{
     let typeError: ErrorServiceType
     let reason: String
     
