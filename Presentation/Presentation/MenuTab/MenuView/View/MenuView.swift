@@ -12,7 +12,7 @@ public struct MenuView<ViewModel>: View where ViewModel: MenuViewModelProtocol{
     @ObservedObject var viewModel: ViewModel
     let cordinator: MenuViewCordinatorProtocol
     
-    init(viewModel: ViewModel, cordinator: MenuViewCordinatorProtocol) {
+    public init(viewModel: ViewModel, cordinator: MenuViewCordinatorProtocol) {
         self.viewModel = viewModel
         self.cordinator = cordinator
         self.viewModel.callServiceMenuSections()
@@ -39,12 +39,12 @@ public struct MenuView<ViewModel>: View where ViewModel: MenuViewModelProtocol{
         }
     }
 }
-
+/*
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         MenuView(viewModel: MockMenuVieModel(), cordinator: MenuViewCordinator())
     }
-}
+}*/
 
 
 

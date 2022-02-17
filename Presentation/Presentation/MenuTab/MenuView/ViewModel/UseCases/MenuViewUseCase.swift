@@ -8,11 +8,11 @@
 import Foundation
 import Domain
 
-protocol MenuViewUseCaseProtocol {
+public protocol MenuViewUseCaseProtocol {
     func getMenuSectionsService(_ completion:@escaping (Swift.Result<[MenuModel],ErrorModel>)->Void)
 }
 
-struct MenuViewUseCase: MenuViewUseCaseProtocol {
+public struct MenuViewUseCase: MenuViewUseCaseProtocol {
     
     let useCase: MenuOrderUseCaseProtocol
     
@@ -20,7 +20,7 @@ struct MenuViewUseCase: MenuViewUseCaseProtocol {
         self.useCase = useCase
     }
     
-    func getMenuSectionsService(_ completion:@escaping (Swift.Result<[MenuModel],ErrorModel>)->Void){
+    public func getMenuSectionsService(_ completion:@escaping (Swift.Result<[MenuModel],ErrorModel>)->Void){
         
         useCase.getMenuSectionsService { (result) in
             switch result {
@@ -30,7 +30,6 @@ struct MenuViewUseCase: MenuViewUseCaseProtocol {
                 completion(.failure(error))
             }
         }
-        //self.useCase.getMenuSectionsService(completion)
     }
     
     

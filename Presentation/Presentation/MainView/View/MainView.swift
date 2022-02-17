@@ -9,10 +9,10 @@ import SwiftUI
 import Domain
 
 public struct MainView: View {
-
-    public var cordinator: MainCordinatorProtocol
     
-    public init(cordinator: MainCordinatorProtocol) {
+    var cordinator : MainCordinatorProtocol
+    
+    public init(cordinator : MainCordinatorProtocol) {
         self.cordinator = cordinator
     }
     
@@ -31,9 +31,9 @@ public struct MainView: View {
         }
     }
 }
-
+/*
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(cordinator: MainCordinator())
+        MainView(appDI: <#MainViewDIProtocol#>, cordinator: MainCordinator())
     }
-}
+}*/

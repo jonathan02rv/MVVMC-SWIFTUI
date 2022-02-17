@@ -19,7 +19,7 @@ public class MenuViewModel: MenuViewModelProtocol{
     
     var userCaseMenu: MenuViewUseCaseProtocol
     
-    init(userCaseMenu: MenuViewUseCaseProtocol) {
+    public init(userCaseMenu: MenuViewUseCaseProtocol) {
         self.userCaseMenu = userCaseMenu
     }
 

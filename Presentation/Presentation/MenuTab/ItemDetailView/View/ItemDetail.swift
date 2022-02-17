@@ -8,11 +8,15 @@
 import SwiftUI
 import Domain
 
-struct ItemDetail<ViewModel>: View where ViewModel: ItemDetailViewModelProtocol{
+public struct ItemDetail<ViewModel>: View where ViewModel: ItemDetailViewModelProtocol{
     
     @ObservedObject var viewModel: ViewModel
     
-    var body: some View {
+    public init(viewModel: ViewModel){
+        self.viewModel = viewModel
+    }
+    
+    public var body: some View {
         let item = viewModel.getItemData()
         VStack {
             ZStack(alignment: .bottomTrailing) {

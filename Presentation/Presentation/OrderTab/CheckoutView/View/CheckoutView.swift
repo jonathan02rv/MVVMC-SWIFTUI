@@ -7,13 +7,18 @@
 
 import SwiftUI
 
-struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol {
+public struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol {
     
     @ObservedObject var viewModel: ViewModel
     let cordinator: CheckoutViewCordinatorProtocol
     
+    public init(viewModel: ViewModel, cordinator: CheckoutViewCordinatorProtocol) {
+        self.viewModel = viewModel
+        self.cordinator = cordinator
+    }
     
-    var body: some View {
+    
+    public var body: some View {
         
         Form {
             
@@ -62,9 +67,9 @@ struct CheckoutView<ViewModel>: View where ViewModel: CheckoutViewModelProtocol 
         }
     }
 }
-
+/*
 struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
         CheckoutView(viewModel: MockCheckoutViewModel(), cordinator: CheckoutViewCordinator())
     }
-}
+}*/

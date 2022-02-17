@@ -1,25 +1,22 @@
 //
-//  OrderViewCordinator.swift
+//  OrderViewDI.swift
 //  MvvmSwiftUi
 //
-//  Created by Jhonatahan Orlando Rivera Vilcapoma on 25/08/21.
+//  Created by JHONATAHAN RIVERA on 17/02/22.
 //
 
 import Foundation
+import Presentation
 import Domain
 import Data
 
-protocol OrderViewCordinatorProtocol{
-    func routeToCheckoutView()->CheckoutView<CheckoutViewModel>
-}
-
-struct OrderViewCordinator: OrderViewCordinatorProtocol{
+struct OrderViewDI: OrderViewCordinatorProtocol {
     func routeToCheckoutView()->CheckoutView<CheckoutViewModel>{
         
         let repository = MenuOrderRepository()
         let userCase = CheckoutViewUseCase(useCase: MenuOrderUseCase(repository: repository))
         let viewModel = CheckoutViewModel(useCaseCheckout: userCase)
         
-        return CheckoutView(viewModel: viewModel, cordinator: CheckoutViewCordinator())
+        return CheckoutView(viewModel: viewModel, cordinator: CheckoutViewDI())
     }
 }

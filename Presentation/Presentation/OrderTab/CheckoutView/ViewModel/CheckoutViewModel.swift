@@ -8,7 +8,7 @@
 import Foundation
 import Domain
 
-protocol CheckoutViewModelProtocol: ObservableObject{
+public protocol CheckoutViewModelProtocol: ObservableObject{
     var totalPrice: String { get }
     var tipAmount: Int {get set}
     var tipAmounts: [Int] { get }
@@ -20,24 +20,24 @@ protocol CheckoutViewModelProtocol: ObservableObject{
     func confirmOrder()
 }
 
-class CheckoutViewModel: CheckoutViewModelProtocol{
-    var totalPrice: String {
+public class CheckoutViewModel: CheckoutViewModelProtocol{
+    public var totalPrice: String {
         print("TOTAL: \(globalOrder.getTotal())")
         let total = Double(globalOrder.getTotal())
         let tipValue = total / 100 * Double(tipAmount)
         return "$ \(total + tipValue)"
     }
 
-    @Published var addLoyaltyDetails = false
-    @Published var loyaltyNumber = ""
-    @Published var showingPaymentAlert = false
+    @Published public var addLoyaltyDetails = false
+    @Published public var loyaltyNumber = ""
+    @Published public var showingPaymentAlert = false
     
-    @Published var paymentType = "Credit Card"
-    let paymentTypes = ["Cash", "Credit Card", "Dinner Points"]
+    @Published public var paymentType = "Credit Card"
+    public let paymentTypes = ["Cash", "Credit Card", "Dinner Points"]
     
     
-    @Published var tipAmount = 15
-    let tipAmounts = [10, 15, 20, 25, 0]
+    @Published public var tipAmount = 15
+    public let tipAmounts = [10, 15, 20, 25, 0]
     
     
     @Published var itemsOrder = [ItemModel]()
@@ -45,13 +45,13 @@ class CheckoutViewModel: CheckoutViewModelProtocol{
     var globalOrder: OrderProtocol
 
     var useCaseCheckout: CheckoutViewUseCaseProtocol
-    init(useCaseCheckout: CheckoutViewUseCaseProtocol) {
+    public init(useCaseCheckout: CheckoutViewUseCaseProtocol) {
         self.globalOrder = OrderAdapter()
         self.useCaseCheckout = useCaseCheckout
     }
     
     
-    func confirmOrder(){
+    public func confirmOrder(){
         useCaseCheckout.confirmOrder(totalAmount: self.totalPrice) { (result) in
             switch result {
             case .success():

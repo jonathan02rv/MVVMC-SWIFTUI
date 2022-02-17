@@ -19,7 +19,7 @@ public class OrderViewModel: OrderViewModelPprotocol{
  
     private var globalOrder: OrderProtocol
     
-    init() {
+    public init() {
         self.globalOrder = OrderAdapter()
     }
     

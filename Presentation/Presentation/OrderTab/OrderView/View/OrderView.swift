@@ -13,6 +13,11 @@ public struct OrderView<ViewModel>: View where ViewModel : OrderViewModelPprotoc
     @ObservedObject var viewModel: ViewModel
     let cordinator: OrderViewCordinatorProtocol
     
+    public init(viewModel: ViewModel, cordinator: OrderViewCordinatorProtocol){
+        self.viewModel = viewModel
+        self.cordinator = cordinator
+    }
+    
     public var body: some View {
         NavigationView {
             List {
@@ -53,9 +58,9 @@ public struct OrderView<ViewModel>: View where ViewModel : OrderViewModelPprotoc
         }
     }
 }
-
+/*
 struct OrderView_Previews: PreviewProvider {
     static var previews: some View {
         OrderView(viewModel: MockOrderView(), cordinator: OrderViewCordinator())
     }
-}
+}*/
