@@ -8,12 +8,12 @@
 import SwiftUI
 import Domain
 
-struct OrderView<ViewModel>: View where ViewModel : OrderViewModelPprotocol{
+public struct OrderView<ViewModel>: View where ViewModel : OrderViewModelPprotocol{
         
     @ObservedObject var viewModel: ViewModel
     let cordinator: OrderViewCordinatorProtocol
     
-    var body: some View {
+    public var body: some View {
         NavigationView {
             List {
                 Section(header: Text("Order List")) {

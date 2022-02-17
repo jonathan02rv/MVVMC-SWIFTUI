@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol MenuViewModelProtocol:ObservableObject{
+public protocol MenuViewModelProtocol:ObservableObject{
     func callServiceMenuSections()
     func getAllSections()->[MenuModel]
     func getItemData(sectionId:String, idItem:String)->ItemModel
 }
 
-class MenuViewModel: MenuViewModelProtocol{
+public class MenuViewModel: MenuViewModelProtocol{
     
     @Published var menuSections = [MenuModel]()
     
@@ -23,11 +23,11 @@ class MenuViewModel: MenuViewModelProtocol{
         self.userCaseMenu = userCaseMenu
     }
 
-    func getAllSections()->[MenuModel]{
+    public func getAllSections()->[MenuModel]{
         return menuSections
     }
     
-    func callServiceMenuSections(){
+    public func callServiceMenuSections(){
         userCaseMenu.getMenuSectionsService { [weak self](result) in
             switch result{
             case .success(let data):
@@ -40,7 +40,7 @@ class MenuViewModel: MenuViewModelProtocol{
         }
     }
     
-    func getItemData(sectionId:String, idItem:String)->ItemModel{
+    public func getItemData(sectionId:String, idItem:String)->ItemModel{
         let item = (self.menuSections.first{$0.id == sectionId})?.items.first{$0.id == idItem}
         return item ?? ItemModel.emptyItem
     }

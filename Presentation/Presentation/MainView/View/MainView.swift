@@ -7,13 +7,16 @@
 
 import SwiftUI
 import Domain
-import Data
 
-struct MainView: View {
+public struct MainView: View {
 
-    let cordinator: MainCordinatorProtocol
+    public var cordinator: MainCordinatorProtocol
     
-    @ViewBuilder var body: some View {
+    public init(cordinator: MainCordinatorProtocol) {
+        self.cordinator = cordinator
+    }
+    
+    @ViewBuilder public var body: some View {
         TabView {
             cordinator.getMenuView()
                 .tabItem {

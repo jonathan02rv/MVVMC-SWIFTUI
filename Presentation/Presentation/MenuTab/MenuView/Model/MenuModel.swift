@@ -8,7 +8,7 @@
 import Foundation
 import Domain
 
-struct MenuModel: ViewData, Identifiable {
+public struct MenuModel: ViewData, Identifiable {
     public var id: String
     public var name: String
     public var items = [ItemModel]()

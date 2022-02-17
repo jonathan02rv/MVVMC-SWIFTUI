@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MenuView<ViewModel>: View where ViewModel: MenuViewModelProtocol{
+public struct MenuView<ViewModel>: View where ViewModel: MenuViewModelProtocol{
     
     @ObservedObject var viewModel: ViewModel
     let cordinator: MenuViewCordinatorProtocol
@@ -18,7 +18,7 @@ struct MenuView<ViewModel>: View where ViewModel: MenuViewModelProtocol{
         self.viewModel.callServiceMenuSections()
     }
     
-    var body: some View {
+    public var body: some View {
         NavigationView{
             List{
                 ForEach(viewModel.getAllSections()){ section in

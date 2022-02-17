@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol OrderViewModelPprotocol: ObservableObject {
+public protocol OrderViewModelPprotocol: ObservableObject {
     func getItemsOrder()->[ItemModel]
     func deleteItems(at offsets: IndexSet)
     func updateModel()
 }
 
-class OrderViewModel: OrderViewModelPprotocol{
+public class OrderViewModel: OrderViewModelPprotocol{
     
     @Published var itemsOrder = [ItemModel]()
  
@@ -23,16 +23,16 @@ class OrderViewModel: OrderViewModelPprotocol{
         self.globalOrder = OrderAdapter()
     }
     
-    func getItemsOrder()->[ItemModel]{
+    public func getItemsOrder()->[ItemModel]{
         return globalOrder.getItemsOrder()
     }
     
-    func deleteItems(at offsets: IndexSet){
+    public func deleteItems(at offsets: IndexSet){
         globalOrder.deleteItems(at: offsets)
         updateModel()
     }
     
-    func updateModel(){
+    public func updateModel(){
         itemsOrder = globalOrder.getItemsOrder()
     }
 }
