@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Domain
 
 public protocol CheckoutViewUseCaseProtocol {
     func confirmOrder(totalAmount: String,_ completion: @escaping (Swift.Result<Void,ErrorModel>)->Void)

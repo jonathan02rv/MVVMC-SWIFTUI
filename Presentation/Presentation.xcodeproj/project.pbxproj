@@ -36,6 +36,7 @@
 		E89AB0AE27BE433800AB6B6C /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AB04F27BE3DF700AB6B6C /* MenuView.swift */; };
 		E89AB0AF27BE434800AB6B6C /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AB05027BE3DF700AB6B6C /* ItemRow.swift */; };
 		E89AB0B027BE436B00AB6B6C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AB04927BE3DF100AB6B6C /* MainView.swift */; };
+		E89AB0C527BE8E7500AB6B6C /* CheckoutViewUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89AB0C427BE8E7500AB6B6C /* CheckoutViewUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		E89AB09327BE40C600AB6B6C /* WrappersProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrappersProperties.swift; sourceTree = "<group>"; };
 		E89AB0A227BE420E00AB6B6C /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89AB0AA27BE428F00AB6B6C /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E89AB0C427BE8E7500AB6B6C /* CheckoutViewUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutViewUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +318,7 @@
 		E89AB06927BE3DFC00AB6B6C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E89AB0C327BE8E5C00AB6B6C /* UseCases */,
 				E89AB06827BE3DFC00AB6B6C /* CheckoutViewModel.swift */,
 			);
 			path = ViewModel;
@@ -393,6 +396,14 @@
 				E89AB0A227BE420E00AB6B6C /* Domain.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E89AB0C327BE8E5C00AB6B6C /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				E89AB0C427BE8E7500AB6B6C /* CheckoutViewUseCase.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -515,6 +526,7 @@
 				E89AB0A927BE424200AB6B6C /* CheckoutViewCordinatorProtocol.swift in Sources */,
 				E89AB0AE27BE433800AB6B6C /* MenuView.swift in Sources */,
 				E89AB08D27BE405400AB6B6C /* MockItemDetailViewModel.swift in Sources */,
+				E89AB0C527BE8E7500AB6B6C /* CheckoutViewUseCase.swift in Sources */,
 				E89AB09A27BE41AB00AB6B6C /* MenuModel.swift in Sources */,
 				E89AB09C27BE41B600AB6B6C /* MenuViewModel.swift in Sources */,
 				E89AB09427BE40C600AB6B6C /* WrappersProperties.swift in Sources */,

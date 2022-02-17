@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Domain
 
 public protocol CheckoutViewModelProtocol: ObservableObject{
     var totalPrice: String { get }
