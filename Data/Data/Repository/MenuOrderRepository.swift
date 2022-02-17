@@ -11,9 +11,9 @@ import Domain
 public struct MenuOrderRepository: MenuOrderRepositoryProtocol{
     
     private let networkDataSource: DataSourceNetworkProtocol
-    private let localDataSource: DataSourceLocalProtocol
+    private let localDataSource: DataSourceLocalProtocol?
     
-    public init(networkSource:DataSourceNetworkProtocol, localSource: DataSourceLocalProtocol){
+    public init(networkSource:DataSourceNetworkProtocol, localSource: DataSourceLocalProtocol? = nil){
         self.networkDataSource = networkSource
         self.localDataSource = localSource
     }
@@ -23,7 +23,7 @@ public struct MenuOrderRepository: MenuOrderRepositoryProtocol{
     }
     
     public func getMenuSectionsService(_ completion:@escaping (Swift.Result<[MenuSectionModel],ErrorModel>)->Void){
-      
+        
         let request = RequestOBjectMenuSection()
         networkDataSource.getMenuSectionsService(request: request) { (result) in
             switch result{
@@ -37,7 +37,11 @@ public struct MenuOrderRepository: MenuOrderRepositoryProtocol{
     
     func getLocalData(_ completion:@escaping (Swift.Result<[MenuSectionModel],ErrorModel>)->Void){
         
-        localDataSource.getMenuSectionsService(fileName: "menu.json") { (result) in
+        guard let _ = localDataSource else { completion(.failure(ErrorModel(type: .custom, description: "Error")))
+            return
+        }
+        
+        localDataSource?.getMenuSectionsService(fileName: "menu.json") { (result) in
             switch result{
             case .success(let data):
                 completion(.success(MenuSectionEntity.maperArray(data: data)))
@@ -48,6 +52,7 @@ public struct MenuOrderRepository: MenuOrderRepositoryProtocol{
     }
     
     public func confirmOrder(totalAmount: String, _ completion: @escaping (Swift.Result<Void, ErrorModel>) -> Void) {
+        
         let params = ["totalAmount":totalAmount]
         let request = RequestOBjectCheckoukOrder(params: params)
         networkDataSource.confirmOrder(request: request) { (result) in

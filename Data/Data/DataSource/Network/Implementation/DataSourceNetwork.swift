@@ -7,18 +7,18 @@
 
 import Foundation
 
-struct DataSourceNetwork: DataSourceNetworkProtocol{
+public struct DataSourceNetwork: DataSourceNetworkProtocol{
     let urlSessionConfiguration = URLSessionConfiguration.default
     let urlSession: URLSession!
     
-    init() {
+    public init() {
         urlSessionConfiguration.timeoutIntervalForRequest = 15.0
         urlSessionConfiguration.timeoutIntervalForResource = 30.0
         urlSession = URLSession(configuration: self.urlSessionConfiguration)
     }
     
     //MARK: - PostMethod
-    func confirmOrder(request: RequestObject,_ completion: @escaping (Swift.Result<Void, ErrorEntity>) -> Void){
+    public func confirmOrder(request: RequestObject,_ completion: @escaping (Swift.Result<Void, ErrorEntity>) -> Void){
         
         guard let requestRef = request as? RequestOBjectCheckoukOrder else{return}
         let urlService = baseUrlConfig + requestRef.path
@@ -42,7 +42,7 @@ struct DataSourceNetwork: DataSourceNetworkProtocol{
     }
     
     //MARK: - Get Method
-    func getMenuSectionsService(request: RequestObject, _ completion:@escaping (Swift.Result<[MenuSectionEntity],ErrorEntity>)->Void){
+    public func getMenuSectionsService(request: RequestObject, _ completion:@escaping (Swift.Result<[MenuSectionEntity],ErrorEntity>)->Void){
         
         guard let requestRef = request as? RequestOBjectMenuSection else{return}
         let urlService = baseUrlConfig + requestRef.path
